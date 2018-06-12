@@ -35,3 +35,23 @@ if error != None:
 if error is None:
     print(sum)
 
+def main(array):
+    if len(array) == 0:
+        return None, 'Short array. Try again'
+
+    def rec_sum(array):
+        if len(array) == 0:
+            return 0
+        else:
+            return array[0] + rec_sum(array[2:])
+
+    sum= rec_sum(array)
+
+    return sum, None
+
+result, error = main(array)
+
+if error != None:
+    print(error)
+if error == None:
+    print(result)
