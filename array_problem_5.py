@@ -89,3 +89,28 @@ else:
     print('We have done it!.Max number in your array is {}, his number is {}!'.format(max_number, index))
 
 
+def main(array):
+    if len(array) == 0:
+        return None, 'Short array. Try again'
+
+    maxx = int(array[0])
+
+    def find_max(array, maxx):
+        if len(array) == 0:
+            return maxx
+
+        if maxx <= array[0]:
+            maxx = array[0]
+        return find_max(array[1:], maxx)
+
+    max_number = find_max(array, maxx)
+    index = array.index(max_number)
+    return (max_number, index), None
+
+result, error = main(array)
+
+if error != None:
+    print('Bro, something wrong')
+if error == None:
+    print('We have done it!.Max number in your array is {}, his number is {}!'.format(result[0], result[1]))
+
