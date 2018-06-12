@@ -28,3 +28,51 @@ if error == None:
     print(mid)
 
 
+
+def while_number(array):
+    if len(array) == 0:
+        return None, 'Enter new array. This array is too short'
+
+    C = int(input('Enter value C'))
+    k = 0
+    sum = 0
+    i = 0
+
+    while len(array) > i:
+        if C < array[i]:
+            sum += array[i]
+            k += 1
+        i += 1
+
+    if k == 0:
+        return None, 'All elements in your array shorter than your value C'
+
+    mid = sum / k
+
+    return mid, None
+
+mid_quantity, error = while_number(array)
+
+if error != None:
+    print(error)
+if error == None:
+    print(mid_quantity)
+
+def main(array):
+    if len(array) == 0:
+        return None, 'Short array. You have infinity number of attemts'
+
+    C = int(input('Please write quantity C'))
+
+    def rec_number(array, C, k = 0):
+        if len(array) == 0:
+            return 0, k
+        if C < array[0]:
+            return array[0] + rec_number(array[1:], k + 1)
+        else:
+            return rec_number(array[1:])
+
+    sum_numbers, quantity = rec_number(array, C, k = 0)
+
+    return sum_numbers, quantity, None
+
