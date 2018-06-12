@@ -76,3 +76,34 @@ def main(array):
 
     return sum_numbers, quantity, None
 
+
+def max_number(array):
+    if len(array) == 0:
+        return None, 'Short array, try again'
+
+    C = int(input('Enter value C = '))
+    k = 0
+    sum = 0
+
+    def rec_array(array, C, k):
+        if len(array) == 0:
+            return 0, k
+        if array[0] > C:
+            k += 1
+            sum, k = rec_array(array[1:], C, k)
+            return sum + array[0], k
+        else:
+            return rec_array(array[1:], C, k)
+
+    sum, k = rec_array(array, C, k)
+    aver = sum / k
+
+    return aver, None
+
+
+aver, error = max_number(array)
+
+if error != None:
+    print(error)
+if error == None:
+    print(aver)
