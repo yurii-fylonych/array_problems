@@ -39,5 +39,26 @@ if error == None:
     print(list_of_array)
 
 
+def main(array):
+    if len(array) == 0:
+        return None, 'Short array. Try again'
+
+    def rec_func(array):
+        if len(array) == 0:
+            return ''
+        if array[0] % 2 != 0:
+            print(array[0], end=' ')
+        return rec_func(array[1:])
+
+    result = rec_func(array)
+
+    return result, None
+
+
+result, error = main(array)
+
+if error != None:
+    print(error)
+
 
 
