@@ -20,3 +20,30 @@ if error != None:
     print(error)
 else:
     print(result)
+
+
+
+
+def array_with_even_items(array):
+    if len(array) == 0:
+        return None, 'Short array. Try again'
+
+    B = []
+    index = 0
+
+    while index < len(array):
+        if index % 2 != 0:
+            B.append(array[index])
+        index += 1
+
+    return B, None
+
+
+result, error = array_with_even_items(array)
+
+if error != None:
+    print(error)
+else:
+    print(result)
+
+
