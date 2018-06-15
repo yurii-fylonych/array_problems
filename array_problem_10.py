@@ -47,3 +47,28 @@ else:
     print(result)
 
 
+
+def array_with_even_items(array):
+    if len(array) == 0:
+        return None, 'Short array. Try again'
+
+    B = []
+
+    def rec_array(array, B):
+        if len(array) == 0 or len(array) == 1:
+            return B
+
+        B.append(array[1])
+        return rec_array(array[1:], B)
+
+    result = rec_array(array, B)
+
+    return result, None
+
+
+result, error = array_with_even_items(array)
+
+if error != None:
+    print(error)
+else:
+    print(result)
