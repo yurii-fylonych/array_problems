@@ -18,3 +18,27 @@ else:
     print(result)
 
 
+array = [3, 5, 6, 7, 12, -4, -3, -5]
+
+
+def replace_el_in_array(array):
+    if len(array) == 0 or len(array) == 1:
+        return None, 'Short array. Try again'
+
+    index = 1
+
+    while index < len(array):
+        if index % 2 != 0:
+            array[index] = 0
+        index += 1
+
+    return array, None
+
+
+result, array = replace_el_in_array(array)
+
+if result == None:
+    print(error)
+else:
+    print(result)
+
