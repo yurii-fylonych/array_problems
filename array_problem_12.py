@@ -42,3 +42,28 @@ if result == None:
 else:
     print(result)
 
+
+def substite_items(array):
+    if len(array) == 0 or len(array) == 1:
+        return None, 'Short array. Try again'
+
+    n = 1
+
+    def change_array(array, n):
+        if len(array) == 0:
+            return 0
+        if n < len(array):
+            array[n] = 0
+            return change_array(array, n + 2)
+
+    result = change_array(array, n)
+
+    return array, None
+
+
+result, array = substite_items(array)
+
+if result == None:
+    print(error)
+else:
+    print(result)
