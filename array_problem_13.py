@@ -102,3 +102,31 @@ if result == None:
 else:
     print(result)
 
+def substite_items(array):
+    if len(array) == 0:
+        return None, 'Short array. Try again'
+
+    if not 0 in array:
+        return None, 'Zero element is absent in your list'
+
+    index = 0
+
+    def rec_substitute(array, index):
+        if index < len(array):
+            if array[index] == 0:
+                array.remove(array[index])
+                array.append(0)
+            index += 1
+            return rec_substitute(array, index)
+
+    result = rec_substitute(array, index)
+
+    return array, None
+
+
+result, error = substite_items(array)
+
+if result == None:
+    print(error)
+else:
+    print(result)
