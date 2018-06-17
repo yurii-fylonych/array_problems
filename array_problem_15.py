@@ -63,3 +63,31 @@ if result == None:
     print(error)
 else:
     print('We find your value {} times'.format(result))
+
+
+def compare_item(array):
+    if len(array) == 0:
+        return None, 'Short array. Try again'
+
+    C = int(input('Enter  value for comparison. C = '))
+    count = 0
+
+    def rec_compare(array, C, count):
+        if len(array) == 0:
+            return count
+
+        if C == array[0]:
+            count += 1
+        return rec_compare(array[1:], C, count)
+
+    counts = rec_compare(array, C, count)
+
+    return counts, None
+
+
+result, error = compare_item(array)
+
+if result == None:
+    print(error)
+else:
+    print('We find your value {} times'.format(result))
