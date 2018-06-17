@@ -46,3 +46,20 @@ if result == None:
 else:
     print('We find your value {} times'.format(result))
 
+#Python function count
+
+def compare_item(array):
+    if len(array) == 0:
+        return None, 'Short array. Try again'
+
+    c = int(input('Enter your value = '))
+    counts = array.count(c)
+
+    return counts, None
+
+result, error = compare_item(array)
+
+if result == None:
+    print(error)
+else:
+    print('We find your value {} times'.format(result))
