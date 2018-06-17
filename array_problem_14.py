@@ -46,3 +46,30 @@ elif result == True:
 else:
     print('Your array contains only unique items')
 
+# In previously sorted array
+def has_equal_items(array):
+    if len(array) <= 1:
+        return None, 'Short array. Try again'
+
+    n = len(array) - 1
+    condition = False
+    array.sort()
+    index = 0
+
+    while index < n:
+        if array[index] == array[index + 1]:
+            condition = True
+
+        index += 1
+
+    return condition, None
+
+
+result, error = has_equal_items(array)
+
+if result == None:
+    print(error)
+elif result == True:
+    print('Your array includes similar elements')
+else:
+    print('Your array contains only unique items')
