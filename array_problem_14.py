@@ -21,3 +21,28 @@ if result == None:
 else:
     print(result)
 
+
+def has_equal_items(array):
+    if len(array) <= 1:
+        return None, 'Short array. Try again'
+
+    condition = False
+    n = len(array)
+
+    for i in range(n):
+        for j in range(1 + i, n - 1):
+            if array[i] == array[j]:
+                condition = True
+
+    return condition, None
+
+
+result, error = has_equal_items(array)
+
+if result == None:
+    print(error)
+elif result == True:
+    print('Your array includes similar elements')
+else:
+    print('Your array contains only unique items')
+
