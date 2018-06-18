@@ -25,3 +25,26 @@ if result == None:
 else:
     print(result)
 
+
+def find_2_max_item(array):
+    if len(array) == 0:
+        return None, 'Short array. Try again'
+
+    n = len(array) - 1
+
+    for i in range(n):
+        for j in range(n - i):
+            if array[j] > array[j + 1]:
+                array[j], array[j + 1] = array[j + 1], array[j]
+
+    sec_el = array[n]
+
+    return sec_el, None
+
+
+result, error = find_2_max_item(array)
+
+if result == None:
+    print(error)
+else:
+    print(result)
