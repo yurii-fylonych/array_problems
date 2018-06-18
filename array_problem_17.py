@@ -76,3 +76,9 @@ if result == None:
 else:
     print('Array has {} negative elements'.format(result))
 
+
+# Python
+
+count =len([x for x in array if x < 0])
+
+count =len(list(filter(lambda x: x < 0, [int(x) for x in a])))
