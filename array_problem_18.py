@@ -49,4 +49,27 @@ else:
     print(result)
 
 
+def min_items(array):
+    if len(array) <= 2:
+        return None, 'Short array. Try again'
 
+    min_item = 10000
+
+    def rec_min(array, min_item):
+        if len(array) <= 2:
+            return min_item
+        if array[2] < min_item:
+            min_item = array[2]
+        return rec_min(array[2:], min_item)
+
+    min_item = rec_min(array, min_item)
+
+    return min_item, None
+
+
+result, error = min_items(array)
+
+if result == None:
+    print(error)
+else:
+    print(result)
