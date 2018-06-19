@@ -46,4 +46,35 @@ else:
     print(result)
 
 
+def substitute_items(array):
+    if len(array) == 0:
+        return None, 'Short array. Try again'
+
+    index = 0
+
+    def rec_substitute_items(array, index):
+        if index == len(array):
+            return array
+        if array[index] > 0:
+            array[index] = 1
+        else:
+            array[index] = 0
+
+        index += 1
+
+        return rec_substitute_items(array, index)
+
+    new_array = rec_substitute_items(array, index)
+
+    return new_array, None
+
+
+result, error = substitute_items(array)
+
+if result == None:
+    print(error)
+else:
+    print(result)
+
+
 
