@@ -76,5 +76,34 @@ if result == None:
 else:
     print(result)
 
+def substitute_items(array):
+    if len(array) == 0:
+        return None, 'Short array. Try again'
 
+    count = 0
+    index = 0
+
+    def subsitute_items(array, count, index):
+        if index == len(array):
+            return count
+
+        if array[index] > 7:
+            array[index] = 7
+            count += 1
+
+        index += 1
+
+        return subsitute_items(array, count, index)
+
+    count = subsitute_items(array, count, index)
+
+    return count, None
+
+
+result, error = substitute_items(array)
+
+if result == None:
+    print(error)
+else:
+    print(result)
 
